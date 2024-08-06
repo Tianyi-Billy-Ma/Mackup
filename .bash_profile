@@ -14,9 +14,6 @@ if [ -r ~/.bashrc ]; then
 	source ~/.bashrc
 fi
 
-if [[ ! $TERM =~ screen ]]; then
-	exec tmux
-fi
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/tianyima/anaconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"

@@ -9,9 +9,10 @@ export BROWSER="Arc"
 export GITUSER="Tianyi-Billy-Ma"
 export REPOS="$HOME/Documents/GitHub"
 export GUREPOS="$REPOS/$GITUSER"
-export SCRIPTS="$DOTFILES/scripts"
 export SECOND_BRAIN="$HOME/Documents/Obsidian/Second-Brain"
 export DOTFILES="$GUREPOS/dotfiles"
+export MACKUPDIR="$GUREPOS/Mackup"
+export SCRIPTS="$MACKUPDIR/scripts"
 
 export PATH="${PATH:+${PATH}:}"$SCRIPTS
 
@@ -71,7 +72,8 @@ alias la='ls -a'
 # CD
 alias scripts="cd $SCRIPTS"
 alias gr="cd $REPOS"
-alias dot="cd $DOTFILES"
+alias gu="cd $GUREPOS"
+alias dot="cd $MACKUPDIR"
 alias in="cd $SECOND_BRAIN/0-Inbox/"
 # vim & second brain
 alias sb="cd $SECOND_BRAIN"

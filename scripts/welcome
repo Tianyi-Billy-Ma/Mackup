@@ -1,0 +1,13 @@
+#!/bin/bash
+# ~~~~~~~~~~~~~~~ Welcome Screen :) ~~~~~~~~~~~~~~~~~~~~~~~~
+# from TJDevries's config repo
+clear
+
+echo -ne "Hello, $USER. Today is "
+date
+echo -ne "${NC}"
+echo -ne "${NC}"
+echo
+echo -ne "Sysinfo:"
+uptime
+echo -e "${NC}"

@@ -1,0 +1,65 @@
+#!/bin/bash
+
+today=$(date +"%Y-%m-%d")
+tomorrow=$(date -v "+1d" '+%Y-%m-%d')
+yesterday=$(date -v "-1d" '+%Y-%m-%d')
+file="$SECOND_BRAIN"'/Periodic-Notes/Daily-Notes/'$(date +'%Y')/$(date +'%m-%b')/$(date +"%Y-%m-%d").md
+
+mkdir -p "$SECOND_BRAIN"'/Periodic-Notes/Daily-Notes/'$(date +'%Y')/$(date +'%m-%b')
+
+cd "$SECOND_BRAIN" || exit
+
+new_note() {
+	touch "$file"
+
+	# Format the file with the daily template
+	cat <<EOF >"$file"
+---
+id: $today
+aliases: 
+tags:
+ - Daily-Note
+---
+[[$yesterday]] - [[$tomorrow]]
+
+## Intention
+
+What do I want to achieve today and tomorrow?
+
+## Tracking
+
+- [ ] Read a paper
+- [ ] Workout
+
+## Log
+
+---
+### Notes created today
+
+\`\`\`dataview 
+LIST 
+WHERE file.cday = this.file.day 
+\`\`\`
+
+### Notes last touched today
+
+\`\`\`dataview
+List 
+FROM "" WHERE file.mday = this.file.day
+\`\`\`
+
+
+EOF
+
+}
+
+# If the daily note does not exist, create a new one.
+# this uses the test command with the -f flag.
+if [ ! -f "$file" ]; then
+	echo "File does not exist, creating new daily note."
+	new_note
+fi
+
+# Open the daily note at the bottom of the file in insert mode and run NoNeckPain to make it center
+# nvim '+ normal Gzzo' "$file" -c :NoNeckPain
+nvim "+1 +/### Notes created today" -f "$file" -c :NoNeckPain

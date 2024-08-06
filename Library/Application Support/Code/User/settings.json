@@ -1,0 +1,13 @@
+{
+"terminal.integrated.defaultProfile.osx": "tmux-shell",
+
+  "terminal.integrated.profiles.osx": {
+  //...existing profiles...
+  "tmux-shell": {
+    "path": "tmux",
+    "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"]
+  }
+},
+"editor.fontSize": 13,
+"workbench.colorCustomizations": {},
+}
