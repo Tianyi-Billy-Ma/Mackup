@@ -1,13 +1,24 @@
 {
-"terminal.integrated.defaultProfile.osx": "tmux-shell",
-
-  "terminal.integrated.profiles.osx": {
-  //...existing profiles...
-  "tmux-shell": {
+"terminal.integrated.defaultProfile.osx": "tmux",
+"terminal.integrated.defaultProfile.linux": "tmux",
+"terminal.integrated.profiles.linux":{
+  "tmux": {
     "path": "tmux",
     "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"]
   }
 },
-"editor.fontSize": 13,
+"terminal.integrated.profiles.osx": {
+  //...existing profiles...
+  "tmux": {
+    "path": "tmux",
+    "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"]
+  }
+},
+"editor.fontSize": 15,
 "workbench.colorCustomizations": {},
+"[python]": {
+  "editor.defaultFormatter": "ms-python.black-formatter"
+},
+"editor.accessibilitySupport": "on",
+"editor.mouseWheelZoom": true,
 }
