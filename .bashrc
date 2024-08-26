@@ -81,6 +81,8 @@ alias sb="cd $SECOND_BRAIN"
 # ricing
 alias sbr='source ~/.bashrc'
 
+# Check Storage
+
 # finds all files recursively and sorts by last modification, ignore hidden files
 alias last='find . -type f -not -path "*/\.*" -exec ls -lrt {} +'
 

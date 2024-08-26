@@ -40,20 +40,20 @@ vim.g.Mm_IgnoreFilePatterns = { "*.pyc", "*.zip" }
 vim.g.grammarous_jar_url = "https://www.languagetool.org/download/LanguageTool-5.9.zip"
 
 local function isempty(s)
-  return s == nil or s == ""
+	return s == nil or s == ""
 end
 local function use_if_defined(val, fallback)
-  return val ~= nil and val or fallback
+	return val ~= nil and val or fallback
 end
 
 -- python provide
 local conda_prefix = os.getenv("CONDA_PREFIX")
 if not isempty(conda_prefix) then
-  vim.g.python_host_prog = use_if_defined(vim.g.python_host_prog, conda_prefix .. "/bin/python")
-  vim.g.python3_host_prog = use_if_defined(vim.g.python3_host_prog, conda_prefix .. "/bin/python")
+	vim.g.python_host_prog = use_if_defined(vim.g.python_host_prog, conda_prefix .. "/bin/python")
+	vim.g.python3_host_prog = use_if_defined(vim.g.python3_host_prog, conda_prefix .. "/bin/python")
 else
-  vim.g.python_host_prog = use_if_defined(vim.g.python_host_prog, "python")
-  vim.g.python3_host_prog = use_if_defined(vim.g.python3_host_prog, "python3")
+	vim.g.python_host_prog = use_if_defined(vim.g.python_host_prog, "python")
+	vim.g.python3_host_prog = use_if_defined(vim.g.python3_host_prog, "python3")
 end
 
 -- Config for nvim-ufo
@@ -65,10 +65,10 @@ opt.foldlevelstart = 99
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.fillchars = {
-  foldopen = "▾",
-  fold = " ",
-  eob = " ",
-  foldclose = "▸",
+	foldopen = "▾",
+	fold = " ",
+	eob = " ",
+	foldclose = "▸",
 }
 vim.g.markdown_folding = 1
 vim.g.lazygit_config = false

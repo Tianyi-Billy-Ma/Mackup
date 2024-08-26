@@ -5,7 +5,7 @@
         "command": "-workbench.action.showAllSymbols"
     },
     {
-        "key": "shift+cmd+t",
+        "key": "cmd+t",
         "command": "workbench.action.terminal.toggleTerminal",
         "when": "terminal.active"
     },
@@ -17,5 +17,70 @@
     {
         "key": "shift+cmd+t",
         "command": "-workbench.action.reopenClosedEditor"
+    },
+    {
+        "key": "cmd+y",
+        "command": "workbench.debug.action.toggleRepl",
+        "when": "workbench.panel.repl.view.active"
+    },
+    {
+        "key": "shift+cmd+y",
+        "command": "-workbench.debug.action.toggleRepl",
+        "when": "workbench.panel.repl.view.active"
+    },
+    {
+        "key": "cmd+r",
+        "command": "-workbench.action.reloadWindow",
+        "when": "isDevelopment"
+    },
+    {
+        "key": "cmd+r",
+        "command": "-jupyter.refreshDataViewer",
+        "when": "isWorkspaceTrusted && jupyter.dataViewerActive"
+    },
+    {
+        "key": "cmd+r",
+        "command": "-python.refreshTensorBoard",
+        "when": "python.hasActiveTensorBoardSession"
+    },
+    {
+        "key": "cmd+r",
+        "command": "-workbench.action.terminal.runRecentCommand",
+        "when": "accessibilityModeEnabled && terminalFocus && terminalHasBeenCreated || accessibilityModeEnabled && terminalFocus && terminalProcessSupported || accessibilityModeEnabled && accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibilityModeEnabled && accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+    },
+    {
+        "key": "cmd+r",
+        "command": "-inlineChat.regenerate",
+        "when": "inlineChatHasProvider && inlineChatVisible"
+    },
+    {
+        "key": "cmd+r",
+        "command": "workbench.action.debug.start",
+        "when": "debuggersAvailable && debugState == 'inactive'"
+    },
+    {
+        "key": "f5",
+        "command": "-workbench.action.debug.start",
+        "when": "debuggersAvailable && debugState == 'inactive'"
+    },
+    {
+        "key": "cmd+r",
+        "command": "workbench.action.debug.continue",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "f5",
+        "command": "-workbench.action.debug.continue",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "shift+cmd+r",
+        "command": "workbench.action.debug.restart",
+        "when": "inDebugMode"
+    },
+    {
+        "key": "shift+cmd+f5",
+        "command": "-workbench.action.debug.restart",
+        "when": "inDebugMode"
     }
 ]

@@ -1,24 +1,22 @@
 {
-"terminal.integrated.defaultProfile.osx": "tmux",
-"terminal.integrated.defaultProfile.linux": "tmux",
-"terminal.integrated.profiles.linux":{
-  "tmux": {
-    "path": "tmux",
-    "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"]
-  }
-},
-"terminal.integrated.profiles.osx": {
-  //...existing profiles...
-  "tmux": {
-    "path": "tmux",
-    "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"]
-  }
-},
-"editor.fontSize": 15,
-"workbench.colorCustomizations": {},
-"[python]": {
-  "editor.defaultFormatter": "ms-python.black-formatter"
-},
-"editor.accessibilitySupport": "on",
-"editor.mouseWheelZoom": true,
+    "workbench.colorCustomizations": {},
+    "remote.SSH.remotePlatform": {
+        "crcfe01.crc.nd.edu": "linux",
+        "office": "linux",
+        "bastion.crc.nd.edu": "linux"
+    },
+    "remote.SSH.useLocalServer": false,
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "$HOME/.vimrc",
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "files.autoSave": "afterDelay",
+    "remote.SSH.lockfilesInTmp": true,
+    "settingsSync.ignoredSettings": [
+        
+    ],
+    "editor.minimap.enabled": false,
+    "window.zoomLevel": 1,
+    "editor.accessibilitySupport": "off"
 }
