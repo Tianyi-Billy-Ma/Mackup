@@ -76,3 +76,8 @@ vim.g.maplocalleader = ","
 
 vim.o.cursorline = true
 vim.o.cursorcolumn = true
+
+if vim.env.VSCODE then
+	vim.g.vscode = true
+	opt.foldexpr = "indent"
+end

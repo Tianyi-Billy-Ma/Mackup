@@ -6,8 +6,6 @@
         "bastion.crc.nd.edu": "linux"
     },
     "remote.SSH.useLocalServer": false,
-    "vim.vimrc.enable": true,
-    "vim.vimrc.path": "$HOME/.vimrc",
     "git.autofetch": true,
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
@@ -18,5 +16,37 @@
     ],
     "editor.minimap.enabled": false,
     "window.zoomLevel": 1,
-    "editor.accessibilitySupport": "off"
+    "editor.accessibilitySupport": "off",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": false
+    },
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "github.copilot.preferredAccount": "MTYBilly3",
+    "vscode-neovim.compositeKeys": {
+        "jj": {
+            "command": "vscode-neovim.escape",
+            "args": []
+        },
+        "jk": {
+            // Use lua to execute any logic
+            "command": "vscode-neovim.lua",
+            "args": [
+                [
+                    "local code = require('vscode')",
+                    "code.action('vscode-neovim.escape')",
+                    "code.action('workbench.action.files.save')",
+                ],
+            ],
+        },
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+    },
 }

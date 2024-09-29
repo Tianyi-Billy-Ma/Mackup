@@ -27,6 +27,36 @@ if vim.g.vscode then
 
 	vim.api.nvim_set_keymap("n", "H", ':lua switchEditor(vim.v.count1, "prev")<CR>', { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("x", "H", ':lua switchEditor(vim.v.count1, "prev")<CR>', { noremap = true, silent = true })
+
+	vim.keymap.set("n", "zM", "<Cmd>call VSCodeNotify('editor.unfoldAll')<CR>")
+	vim.keymap.set("n", "zR", "<Cmd>call VSCodeNotify('editor.unfoldAll')<CR>")
+	vim.keymap.set("n", "zc", "<Cmd>call VSCodeNotify('editor.fold')<CR>")
+	vim.keymap.set("n", "zC", "<Cmd>call VSCodeNotify('editor.foldRecursively')<CR>")
+	vim.keymap.set("n", "zo", "<Cmd>call VSCodeNotify('editor.unfold')<CR>")
+	vim.keymap.set("n", "zO", "<Cmd>call VSCodeNotify('editor.unfoldRecursively')<CR>")
+	vim.keymap.set("n", "za", "<Cmd>call VSCodeNotify('editor.toggleFold')<CR>")
+
+	local function moveCursor(direction)
+		if vim.fn.reg_recording() == "" and vim.fn.reg_executing() == "" then
+			return "g" .. direction
+		else
+			return direction
+		end
+	end
+	vim.keymap.set("n", "k", function()
+		return moveCursor("k")
+	end, { expr = true, remap = true })
+	vim.keymap.set("n", "j", function()
+		return moveCursor("j")
+	end, { expr = true, remap = true })
+	-- vim.keymap.set("n", "l", function()
+	-- 	return moveCursor("l")
+	-- end, { expr = true, remap = true })
+	-- vim.api.nvim_set_keymap("n", "j", MoveCursor("j"), { expr = true, noremap = true })
+	-- vim.api.nvim_set_keymap("n", "k", MoveCursor("k"), { expr = true, noremap = true })
+	--
+	--
+	vim.keymap.set("n", "<leader>b", "<Cmd>call VSCodeNotify('editor.debug.action.toggleBreakpoint')<CR>")
 else
 	-- Enable/Disable completion
 	--
